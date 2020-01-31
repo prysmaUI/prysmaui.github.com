@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Function Experiment</title>
+<link href="styles.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <h1>Choose a Stuffed Animal</h1>
+    <a href="https://prnt.sc/qvr219">PokemonFamily</a>
+
+    <script>
+
+        var plushFam = prompt('Type your Name','');
+        var plush = ['wobbuffet','burmy','shellos','turtwig','chatot',
+        'gengar','pichu','furret','starly','mimikyu','flareon','eevee','ivysaur',
+        'murkrow'];
+        
+        
+        function hello(plush){
+
+        }
+
+    function randomInt(min,max){
+        return Math.floor( (max - min + 1) * Math.random()) + min;
+}
+
+        function pokemon(stuffies, poke){
+            console.log(hello(stuffies));
+            var randomPlush = poke[randomInt(0, poke.length - 1)];
+                console.log(`${stuffies}, choose ${randomPlush}?`);
+            
+        }
+
+        pokemon(plushFam, plush);
+
+        var animal = prompt("please enter a number less than 999", "");
+
+        if( parseInt(animal) < 999 ){
+            console.log(`you have ${animal} plushies`);
+        }
+        else{ console.log("you have 0"); }
+    </script>
