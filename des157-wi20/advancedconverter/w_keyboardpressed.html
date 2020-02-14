@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Miles to Kilometers Converter</title>
+	
+	<!--/ /-------- Normalize CSS --------/ /-->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+	
+	<!--/ /-------- Google Fonts --------/ /-->
+	<link href="https://fonts.googleapis.com/css?family=Oswald|PT+Sans&display=swap" rel="stylesheet">
+	
+	<!--/ /-------- My Styles --------/ /-->
+	<link href="keyboardstyles.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<h1>Miles to Kilometers Converter</h1>
+    
+    <div class="container top">
+    	<p>Type in a number of miles and click the button to convert the distance to kilometers.</p>
+        
+        <form method="post" action="" id="convert">
+        
+        	<input type="text" name="distance" id="distance" placeholder="distance">
+            <input type="submit" name="convertdist" id="button" value="Convert Distance">
+        
+        </form>
+    </div>
+    <div class="container bottom" id="answer">
+    	<h2 class="invisible">Answer goes here</h2>
+	</div>
+	
+	<script>
+		
+        /* KEYBOARD PRESSED  */
+
+        document.addEventListener('keydown', function(event){
+			var keyPress = event.which;
+			
+			if( keyPress == 75 ){
+				convertType = "kilometers";
+				heading.innerHTML = "Kilometers to Miles Converter";
+				intro.innerHTML = "Type in a number of kilometers and click the button to convert the distance to miles.";
+			}
+			else if( keyPress == 77 ){
+				convertType = "miles";
+				heading.innerHTML = "Miles to Kilometers Converter";
+				intro.innerHTML = "Type in a number of miles and click the button to convert the distance to kilometers.";
+			}
+		});
+        
+       
+
+		/* TYPE STUFF IN  */
+		document.getElementById("convert").onsubmit = null; 
+		var form = document.getElementById("convert");
+		function handleForm(event) { event.preventDefault(); } 
+		form.addEventListener('submit', handleForm);
+
+		/* CONVERSION CONDITIONS  */
+
+		function convert(){
+			
+			var miles = document.getElementById("distance");
+
+			if(isNaN(miles.value) == false/* typeof parseInt(miles.value) == 'number' */){
+
+			var kilometers = document.getElementById("answer");
+			var km = miles.value * 1.60934;
+			kilometers.innerHTML = miles.value + " miles is converted to " + km + " kilometers "; 
+		}
+		
+			else{ 
+				var kilometers = document.getElementById("answer");
+				kilometers.innerHTML = miles.value + " is not a number "; 		
+		} 
+			
+		}
+
+		/* BUTTONS */
+
+		var test = document.getElementById("button");
+		var convertDist = document.getElementById("convert");
+
+		if (test.addEventListener) {
+			test.addEventListener("click", convert, false); 
+		} 
+
+		
+
+	</script>
+</body>
+</html>
