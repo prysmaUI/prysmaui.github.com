@@ -1,0 +1,20 @@
+body{
+    margin-left: 25%;
+}
+
+input {display: inline;}
+        .invisible { display: none;}
+        .visible {
+            display: block;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 500px;
+            padding: 20px;
+            color: #fff;
+            background-color: #666;
+            margin-left: 25%;
+            margin-top: 15%;
+            text-align: center;
+        }
+

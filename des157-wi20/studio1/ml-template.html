@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+    <title>Madlibs</title>
+</head>
+<!--this is a JavaScript code to set timer for page refresh-->
+
+<body onload = "JavaScript:AutoRefresh(20000);">
+    
+    <h1>Mad Lib Title</h1>
+    <p>Welcome to Mad Lib</p>
+    <button onclick="myFunction()">Tooltip</button>
+    <form id="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+
+            <input type="text" placeholder="adjective" id="adjective">
+            <input type="text" placeholder="noun" id="noun1">
+            <input type="text" placeholder="noun" id="noun2">
+            <input type="text" placeholder="verb" id="verb">
+            <input type="text" placeholder="finish your thought" name="pfyt" id="fyt">
+            <input type="submit" value="See Mad Lib!">
+
+    </form>
+
+    <div class="invisible" id="madlib">
+        <p> goes here 
+        </p>
+    </div>
+    <script src="scripts.js"></script>
+
+</body>
+</html>
