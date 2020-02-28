@@ -1,4 +1,4 @@
-
+let pixel;
 
 function setup(){
  var myCanvas = createCanvas(800,250);
